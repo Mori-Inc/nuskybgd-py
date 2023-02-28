@@ -106,7 +106,7 @@ e.g. I selected three background regions in DS9 and saved them in ds9 fk5
 format, `bgd1.reg`, `bgd2.reg`, and `bgd3.reg`.
 
 ```bash
-# New syntax for getspecnoarf.py
+# New syntax for getspecnoarf
 # In event_cl/
 getspecnoarf nu90201039002A01_cl.evt reg=bgd/bgd1.reg \
     indir=. outdir=bgd outprefix=bgd1A \
@@ -158,7 +158,7 @@ getspecnoarf nu90201039002B01_cl.evt reg=src.reg \
 
 #### Fix the spectral products' RESPFILE keywords (optional)
 
-Spectral products from the old version of getspecnoarf.py wrote relative paths
+Spectral products from the old version of getspecnoarf wrote relative paths
 in the RESPFILE keyword of the PHA file, so that the latter must be loaded
 from the same relative path for XSPEC to find the RMF file. You can fix the
 RESPFILE keyword in the PHA files to remove the directory name, which lets you
@@ -166,7 +166,7 @@ load the spectrum when working in the same directory as it.
 
 ```bash
 # In event_cl/ or where the spectral files are
-find . -iname "*.pha" -type f -exec phafix.py {} \;
+find . -iname "*.pha" -type f -exec phafix {} \;
 ```
 
 ---
@@ -460,8 +460,8 @@ Creates det0A.rmf, det1A.rmf, etc... in bgd/
 
 ```
 cd /Users/qw/astro/nustar/IC342_X1/90201039002/event_cl
-absrmf.py nu90201039002A01_cl.evt bgd/det
-absrmf.py nu90201039002B01_cl.evt bgd/det
+absrmf nu90201039002A01_cl.evt bgd/det
+absrmf nu90201039002B01_cl.evt bgd/det
 ```
 
 
@@ -470,7 +470,7 @@ absrmf.py nu90201039002B01_cl.evt bgd/det
 
 ```
 cd bgd/
-imrefspec.py AB 0123
+imrefspec AB 0123
 ```
 
 
