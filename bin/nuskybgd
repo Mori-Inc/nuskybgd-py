@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 # (c) 2019 Qian Wang
 # This file is part of nuskybgd released under MIT License.

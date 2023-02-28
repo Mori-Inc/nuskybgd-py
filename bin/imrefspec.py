@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 """
 Creates reference spectra of the aperture background and fcxb background
 components, used by nuskybgd_image, to produce counts images for arbitrary
