@@ -64,11 +64,11 @@ Create the `bgd/` folder if this is the first time.
 
 ### 2.1 Make an image
 
-Use mkimgs.py to create a counts image for WCS reference.
+Use mkimgs to create a counts image for WCS reference.
 
 ```bash
 # (cd into the top level)
-./mkimgs.py ./ 50002031004 3 20
+mkimgs ./ 50002031004 3 20
 ```
 
 This creates the file `imA3to20keV.fits` and `imB3to20keV.fits`, which are
@@ -108,27 +108,27 @@ format, `bgd1.reg`, `bgd2.reg`, and `bgd3.reg`.
 ```bash
 # New syntax for getspecnoarf.py
 # In event_cl/
-getspecnoarf.py nu90201039002A01_cl.evt reg=bgd/bgd1.reg \
+getspecnoarf nu90201039002A01_cl.evt reg=bgd/bgd1.reg \
     indir=. outdir=bgd outprefix=bgd1A \
     attfile=../auxil/nu90201039002_att.fits.gz >& bgd/bgd1A.log
 
-getspecnoarf.py nu90201039002A01_cl.evt reg=bgd/bgd2.reg \
+getspecnoarf nu90201039002A01_cl.evt reg=bgd/bgd2.reg \
     indir=. outdir=bgd outprefix=bgd2A \
     attfile=../auxil/nu90201039002_att.fits.gz >& bgd/bgd2A.log
 
-getspecnoarf.py nu90201039002A01_cl.evt reg=bgd/bgd3.reg \
+getspecnoarf nu90201039002A01_cl.evt reg=bgd/bgd3.reg \
     indir=. outdir=bgd outprefix=bgd3A \
     attfile=../auxil/nu90201039002_att.fits.gz >& bgd/bgd3A.log
 
-getspecnoarf.py nu90201039002B01_cl.evt reg=bgd/bgd1.reg \
+getspecnoarf nu90201039002B01_cl.evt reg=bgd/bgd1.reg \
     indir=. outdir=bgd outprefix=bgd1B \
     attfile=../auxil/nu90201039002_att.fits.gz >& bgd/bgd1B.log
 
-getspecnoarf.py nu90201039002B01_cl.evt reg=bgd/bgd2.reg \
+getspecnoarf nu90201039002B01_cl.evt reg=bgd/bgd2.reg \
     indir=. outdir=bgd outprefix=bgd2B \
     attfile=../auxil/nu90201039002_att.fits.gz >& bgd/bgd2B.log
 
-getspecnoarf.py nu90201039002B01_cl.evt reg=bgd/bgd3.reg \
+getspecnoarf nu90201039002B01_cl.evt reg=bgd/bgd3.reg \
     indir=. outdir=bgd outprefix=bgd3B \
     attfile=../auxil/nu90201039002_att.fits.gz >& bgd/bgd3B.log
 ```
@@ -145,11 +145,11 @@ Extract the spectrum of an extended source in the aperture defined by src.reg.
 # In event_cl/
 mkdir spec
 
-getspecnoarf.py nu90201039002A01_cl.evt reg=src1.reg \
+getspecnoarf nu90201039002A01_cl.evt reg=src1.reg \
     indir=. outdir=spec outprefix=src1A \
     attfile=../auxil/nu90201039002_att.fits.gz >& spec/src1A.log
 
-getspecnoarf.py nu90201039002B01_cl.evt reg=src.reg \
+getspecnoarf nu90201039002B01_cl.evt reg=src.reg \
     indir=. outdir=spec outprefix=src1B \
     attfile=../auxil/nu90201039002_att.fits.gz >& spec/src1B.log
 ```
@@ -496,5 +496,3 @@ Create hardcoded table model of the total background to read in to Xspec?
 
 
 ---
-
-
